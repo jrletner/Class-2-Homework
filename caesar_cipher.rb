@@ -1,3 +1,6 @@
+#Add the debugger
+require "pry"
+
 #NOTES: a-z = 97 through 122
 #NOTES: A-Z = 65 through 90
 
