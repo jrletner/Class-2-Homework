@@ -33,13 +33,13 @@ end
 for n in to_num_array
   n += shift
   shift_num_array.push(n)
-  p shift_num_array
 end
 
 #Convert the new array of number into an array of characters
 for c in shift_num_array
   # Determine if the character is a space or special character
   if c <= 90 && c >= 65 || c <= 122 && c >= 97
+    p "This is c: #{c}"
     cipher_array.push(c.chr)
   else
     # If the character is a space or special character, revert it back
