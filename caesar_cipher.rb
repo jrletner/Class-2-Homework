@@ -24,7 +24,7 @@ shift = gets.chomp.to_i
 #Convert the string to an array of letters
 string_array = string.chars
 
-#Convert the string into a number array
+#Convert the string into a number array, unless it's a space or special character
 for s in string_array
   to_num_array.push(s.ord)
 end
@@ -33,11 +33,19 @@ end
 for n in to_num_array
   n += shift
   shift_num_array.push(n)
+  p shift_num_array
 end
 
 #Convert the new array of number into an array of characters
 for c in shift_num_array
-  cipher_array.push(c.chr)
+  # Determine if the character is a space or special character
+  if c <= 90 && c >= 65 || c <= 122 && c >= 97
+    cipher_array.push(c.chr)
+  else
+    # If the character is a space or special character, revert it back
+    c = c -= shift
+    cipher_array.push(c.chr)
+  end
 end
 
 puts "Your string is: #{string}"
